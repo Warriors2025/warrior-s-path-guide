@@ -52,7 +52,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   }, [isVisible, value]);
 
   return (
-    <div ref={ref} className="text-4xl md:text-5xl font-bold text-military-gold">
+    <div ref={ref} className="text-4xl md:text-5xl font-bold text-warriors-gold">
       {count.toLocaleString()}{suffix}
     </div>
   );
@@ -60,7 +60,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export function StatsSection() {
   return (
-    <section className="py-20 military-gradient relative overflow-hidden">
+    <section className="py-20 warriors-green-gradient relative overflow-hidden">
       {/* Pattern overlay */}
       <div className="absolute inset-0 opacity-5">
         <div 
@@ -73,10 +73,10 @@ export function StatsSection() {
 
       <div className="container relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Our Proven Track Record
           </h2>
-          <p className="text-primary-foreground/70 max-w-2xl mx-auto">
+          <p className="text-white/70 max-w-2xl mx-auto">
             Numbers that speak louder than words. Our consistent results are a testament to our dedication and expertise.
           </p>
         </div>
@@ -87,13 +87,13 @@ export function StatsSection() {
             return (
               <div
                 key={stat.label}
-                className="text-center p-6 rounded-2xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-colors"
+                className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors"
               >
-                <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-military-gold/20 mb-4">
-                  <Icon className="h-8 w-8 text-military-gold" />
+                <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-warriors-gold/20 mb-4">
+                  <Icon className="h-8 w-8 text-warriors-gold" />
                 </div>
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                <p className="mt-2 text-primary-foreground/80 font-medium">{stat.label}</p>
+                <p className="mt-2 text-white/80 font-medium">{stat.label}</p>
               </div>
             );
           })}

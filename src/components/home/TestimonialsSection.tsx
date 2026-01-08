@@ -62,39 +62,41 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 warriors-maroon-gradient">
       <div className="container">
         <div className="text-center mb-12">
-          <p className="text-accent font-semibold mb-2 uppercase tracking-wider text-sm">Success Stories</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <p className="text-warriors-gold font-semibold mb-2 uppercase tracking-wider text-sm">Success Stories</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             What Our Officers Say
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-white/70 max-w-2xl mx-auto">
             Hear from our successful alumni who are now proudly serving in the Indian Armed Forces.
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Main Testimonial Card */}
-          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-xl border border-border relative overflow-hidden">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl relative overflow-hidden">
             {/* Quote Icon */}
-            <div className="absolute top-6 right-6 text-primary/10">
+            <div className="absolute top-6 right-6 text-warriors-green/10">
               <Quote className="h-24 w-24" />
             </div>
 
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-6">
-                <img
-                  src={testimonials[currentIndex].image}
-                  alt={testimonials[currentIndex].name}
-                  className="h-16 w-16 rounded-full object-cover border-2 border-primary"
-                />
+                <div className="relative">
+                  <img
+                    src={testimonials[currentIndex].image}
+                    alt={testimonials[currentIndex].name}
+                    className="h-20 w-20 rounded-full object-cover border-4 border-warriors-gold"
+                  />
+                </div>
                 <div>
-                  <h4 className="font-bold text-lg text-foreground">{testimonials[currentIndex].name}</h4>
+                  <h4 className="font-bold text-lg text-warriors-green">{testimonials[currentIndex].name}</h4>
                   <p className="text-sm text-muted-foreground">{testimonials[currentIndex].role}</p>
                   <div className="flex gap-0.5 mt-1">
                     {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-military-gold text-military-gold" />
+                      <Star key={i} className="h-4 w-4 fill-warriors-gold text-warriors-gold" />
                     ))}
                   </div>
                 </div>
@@ -112,7 +114,7 @@ export function TestimonialsSection() {
               variant="outline"
               size="icon"
               onClick={handlePrev}
-              className="rounded-full"
+              className="rounded-full bg-white/10 border-white/30 text-white hover:bg-white/20"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -127,8 +129,8 @@ export function TestimonialsSection() {
                   }}
                   className={`h-2 rounded-full transition-all ${
                     index === currentIndex
-                      ? "w-8 bg-primary"
-                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                      ? "w-8 bg-warriors-gold"
+                      : "w-2 bg-white/30 hover:bg-white/50"
                   }`}
                 />
               ))}
@@ -138,7 +140,7 @@ export function TestimonialsSection() {
               variant="outline"
               size="icon"
               onClick={handleNext}
-              className="rounded-full"
+              className="rounded-full bg-white/10 border-white/30 text-white hover:bg-white/20"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
