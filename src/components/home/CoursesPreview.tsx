@@ -49,11 +49,11 @@ const courses = [
 
 export function CoursesPreview() {
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className="py-20 bg-white">
       <div className="container">
         <div className="text-center mb-12">
-          <p className="text-accent font-semibold mb-2 uppercase tracking-wider text-sm">Our Programs</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <p className="text-warriors-maroon font-semibold mb-2 uppercase tracking-wider text-sm">Our Programs</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-warriors-green mb-4">
             Popular Defence Courses
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -63,7 +63,7 @@ export function CoursesPreview() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {courses.map((course) => (
-            <Card key={course.id} className="group overflow-hidden border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <Card key={course.id} className="group overflow-hidden border-2 border-warriors-green/20 hover:border-warriors-gold hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={course.image}
@@ -71,18 +71,18 @@ export function CoursesPreview() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {course.popular && (
-                  <Badge className="absolute top-3 left-3 bg-military-gold text-primary hover:bg-military-gold">
+                  <Badge className="absolute top-3 left-3 bg-warriors-gold text-warriors-green font-bold hover:bg-warriors-yellow">
                     Popular
                   </Badge>
                 )}
-                <div className="absolute top-3 right-3 bg-background/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1">
-                  <Star className="h-3 w-3 fill-military-gold text-military-gold" />
+                <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1">
+                  <Star className="h-3 w-3 fill-warriors-gold text-warriors-gold" />
                   <span className="text-xs font-semibold">{course.rating}</span>
                 </div>
               </div>
 
               <CardHeader className="pb-2">
-                <h3 className="font-bold text-lg group-hover:text-primary transition-colors line-clamp-1">
+                <h3 className="font-bold text-lg text-warriors-green group-hover:text-warriors-maroon transition-colors line-clamp-1">
                   {course.title}
                 </h3>
               </CardHeader>
@@ -104,7 +104,7 @@ export function CoursesPreview() {
               </CardContent>
 
               <CardFooter className="pt-0">
-                <Button asChild variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <Button asChild variant="outline" className="w-full border-warriors-green text-warriors-green group-hover:bg-warriors-green group-hover:text-white transition-colors">
                   <Link to="/courses">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -116,7 +116,7 @@ export function CoursesPreview() {
         </div>
 
         <div className="text-center mt-10">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+          <Button asChild size="lg" className="bg-warriors-maroon hover:bg-warriors-maroon/90 text-white font-semibold">
             <Link to="/courses">
               View All Courses
               <ArrowRight className="ml-2 h-5 w-5" />

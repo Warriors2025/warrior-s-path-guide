@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -57,12 +62,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        military: {
-          olive: "hsl(var(--military-olive))",
-          navy: "hsl(var(--military-navy))",
-          gold: "hsl(var(--military-gold))",
-          red: "hsl(var(--military-red))",
-          khaki: "hsl(var(--military-khaki))",
+        warriors: {
+          green: "hsl(var(--warriors-green))",
+          "dark-green": "hsl(var(--warriors-dark-green))",
+          maroon: "hsl(var(--warriors-maroon))",
+          "dark-maroon": "hsl(var(--warriors-dark-maroon))",
+          gold: "hsl(var(--warriors-gold))",
+          yellow: "hsl(var(--warriors-yellow))",
+          red: "hsl(var(--warriors-red))",
+          cream: "hsl(var(--warriors-cream))",
         },
       },
       borderRadius: {
@@ -80,28 +88,14 @@ export default {
           to: { height: "0" },
         },
         "fade-in": {
-          from: { opacity: "0", transform: "translateY(20px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-        "count-up": {
-          from: { opacity: "0", transform: "scale(0.5)" },
-          to: { opacity: "1", transform: "scale(1)" },
-        },
-        "slide-in-right": {
-          from: { transform: "translateX(100%)" },
-          to: { transform: "translateX(0)" },
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out forwards",
-        "count-up": "count-up 0.5s ease-out forwards",
-        "slide-in-right": "slide-in-right 0.3s ease-out",
-      },
-      fontFamily: {
-        heading: ["Inter", "system-ui", "sans-serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
+        "fade-in": "fade-in 0.3s ease-out",
       },
     },
   },

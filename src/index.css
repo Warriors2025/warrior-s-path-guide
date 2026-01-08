@@ -2,98 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Defence Academy Design System - Military-inspired theme */
+/* Warriors Defence Academy Inspired Design System */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Navy Blue - Primary */
-    --primary: 220 60% 25%;
+    /* Dark Green - Primary (Header/Nav) */
+    --primary: 120 40% 20%;
     --primary-foreground: 0 0% 100%;
 
-    /* Light Gray - Secondary */
-    --secondary: 220 15% 95%;
-    --secondary-foreground: 220 20% 10%;
+    /* Light Cream - Secondary */
+    --secondary: 40 30% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 0 0% 40%;
 
-    /* Olive Green - Accent */
-    --accent: 85 35% 35%;
+    /* Maroon/Crimson - Accent (CTA sections) */
+    --accent: 0 70% 35%;
     --accent-foreground: 0 0% 100%;
 
     /* Red for destructive/danger */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 220 60% 25%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 45 90% 50%;
 
     --radius: 0.5rem;
 
-    /* Custom military colors */
-    --military-olive: 85 35% 35%;
-    --military-navy: 220 60% 25%;
-    --military-gold: 45 90% 50%;
-    --military-red: 0 70% 50%;
-    --military-khaki: 40 30% 75%;
+    /* Custom Warriors-inspired colors */
+    --warriors-green: 120 40% 20%;
+    --warriors-dark-green: 120 45% 15%;
+    --warriors-maroon: 0 70% 35%;
+    --warriors-dark-maroon: 0 75% 25%;
+    --warriors-gold: 45 95% 50%;
+    --warriors-yellow: 50 100% 55%;
+    --warriors-red: 0 85% 50%;
+    --warriors-cream: 40 30% 96%;
 
-    --sidebar-background: 220 60% 20%;
+    --sidebar-background: 120 40% 15%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 45 90% 50%;
-    --sidebar-primary-foreground: 220 20% 10%;
-    --sidebar-accent: 220 50% 30%;
+    --sidebar-primary: 45 95% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 120 35% 25%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 220 50% 30%;
-    --sidebar-ring: 45 90% 50%;
+    --sidebar-border: 120 35% 25%;
+    --sidebar-ring: 45 95% 50%;
   }
 
   .dark {
-    --background: 220 25% 8%;
+    --background: 0 0% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 220 25% 12%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 220 25% 12%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 45 90% 50%;
-    --primary-foreground: 220 20% 10%;
+    --primary: 45 95% 50%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 220 25% 18%;
+    --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 25% 18%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 85 40% 45%;
+    --accent: 0 70% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 40%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 25% 20%;
-    --input: 220 25% 20%;
-    --ring: 45 90% 50%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 95% 50%;
 
-    --sidebar-background: 220 30% 10%;
+    --sidebar-background: 120 40% 10%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 45 90% 50%;
-    --sidebar-primary-foreground: 220 20% 10%;
-    --sidebar-accent: 220 30% 18%;
+    --sidebar-primary: 45 95% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 120 35% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 220 30% 18%;
-    --sidebar-ring: 45 90% 50%;
+    --sidebar-border: 120 35% 18%;
+    --sidebar-ring: 45 95% 50%;
   }
 }
 
@@ -112,11 +115,43 @@
     @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
   }
   
-  .military-gradient {
-    background: linear-gradient(135deg, hsl(var(--military-navy)) 0%, hsl(var(--military-olive)) 100%);
+  .warriors-green-gradient {
+    background: linear-gradient(180deg, hsl(var(--warriors-dark-green)) 0%, hsl(var(--warriors-green)) 100%);
+  }
+  
+  .warriors-maroon-gradient {
+    background: linear-gradient(135deg, hsl(var(--warriors-dark-maroon)) 0%, hsl(var(--warriors-maroon)) 50%, hsl(var(--warriors-dark-maroon)) 100%);
   }
   
   .gold-gradient {
-    background: linear-gradient(135deg, hsl(var(--military-gold)) 0%, hsl(40 85% 45%) 100%);
+    background: linear-gradient(135deg, hsl(var(--warriors-gold)) 0%, hsl(var(--warriors-yellow)) 100%);
+  }
+
+  .text-warriors-gold {
+    color: hsl(var(--warriors-gold));
+  }
+
+  .text-warriors-red {
+    color: hsl(var(--warriors-red));
+  }
+
+  .text-warriors-yellow {
+    color: hsl(var(--warriors-yellow));
+  }
+
+  .bg-warriors-green {
+    background-color: hsl(var(--warriors-green));
+  }
+
+  .bg-warriors-maroon {
+    background-color: hsl(var(--warriors-maroon));
+  }
+
+  .bg-warriors-gold {
+    background-color: hsl(var(--warriors-gold));
+  }
+
+  .border-warriors-gold {
+    border-color: hsl(var(--warriors-gold));
   }
 }
