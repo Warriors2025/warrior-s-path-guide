@@ -1,139 +1,78 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Trophy } from "lucide-react";
 
 const selections = [
-  {
-    id: 1,
-    name: "Cadet Arjun Patel",
-    exam: "NDA 2025",
-    rank: "AIR 42",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&face",
-  },
-  {
-    id: 2,
-    name: "Lt. Sneha Sharma",
-    exam: "CDS 2025",
-    rank: "AIR 15",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&face",
-  },
-  {
-    id: 3,
-    name: "Fg Off. Rahul Yadav",
-    exam: "AFCAT 2024",
-    rank: "AIR 8",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&face",
-  },
-  {
-    id: 4,
-    name: "Cadet Priya Singh",
-    exam: "NDA 2024",
-    rank: "AIR 23",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&face",
-  },
-  {
-    id: 5,
-    name: "Sub Lt. Vikram Joshi",
-    exam: "CDS 2024",
-    rank: "AIR 31",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&face",
-  },
-  {
-    id: 6,
-    name: "Cadet Ananya Reddy",
-    exam: "NDA 2025",
-    rank: "AIR 56",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&face",
-  },
-  {
-    id: 7,
-    name: "Plt Off. Karan Mehta",
-    exam: "AFCAT 2025",
-    rank: "AIR 5",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&face",
-  },
-  {
-    id: 8,
-    name: "Cadet Ritu Verma",
-    exam: "CDS 2025",
-    rank: "AIR 19",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&face",
-  },
+  { id: 1, name: "RUDRA SINGH", rank: "65", roll: "1150159", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" },
+  { id: 2, name: "GAURAV GUNJAN KALITA", rank: "64", roll: "0941928", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop" },
+  { id: 3, name: "KHUSHBOO CHAUDHARY", rank: "64", roll: "1445379", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop" },
+  { id: 4, name: "STUTI SINGH", rank: "63", roll: "2642112", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop" },
+  { id: 5, name: "SHUBHRANT SHARMA", rank: "51", roll: "1945143", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop" },
 ];
 
 export function SelectionsSection() {
   return (
-    <section className="py-20 bg-warriors-green relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)",
-          backgroundSize: "20px 20px",
-        }} />
-      </div>
-
-      <div className="container relative z-10">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-warriors-gold/20 text-warriors-gold px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
-            <Trophy className="h-4 w-4" />
-            Our Pride
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Latest <span className="text-warriors-gold">Selections</span>
+    <section className="py-16 bg-white">
+      <div className="container">
+        <div className="mb-8 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-warriors-green mb-3">
+            Latest Selections
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
-            Our students consistently achieve top ranks in NDA, CDS, AFCAT and other defence examinations.
+          <p className="text-muted-foreground">
+            At Warriors Defence Academy, we celebrate students who clear NDA, CDS, AFCAT, and MNS. Their success shows hard work and the right guidance, and inspires us to keep helping others become confident officers ready to serve the nation.
           </p>
         </div>
 
-        {/* Marquee stats */}
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
-          {[
-            { label: "NDA Selections", count: "500+" },
-            { label: "CDS Selections", count: "300+" },
-            { label: "AFCAT Selections", count: "200+" },
-            { label: "SSB Cleared", count: "1000+" },
-          ].map((stat) => (
-            <div key={stat.label} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-3 text-center">
-              <p className="text-2xl font-bold text-warriors-gold">{stat.count}</p>
-              <p className="text-xs text-white/80">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {selections.map((s) => (
+            <div key={s.id} className="relative aspect-square rounded-lg overflow-hidden bg-warriors-green shadow-md hover:shadow-xl transition-shadow group">
+              {/* decorative dots */}
+              <div className="absolute inset-0 opacity-10" style={{
+                backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+                backgroundSize: "14px 14px",
+              }} />
 
-        {/* Selection cards grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          {selections.map((student) => (
-            <div key={student.id} className="group text-center">
-              <div className="relative mx-auto w-28 h-28 md:w-32 md:h-32 mb-3">
-                {/* Gold ring border */}
-                <div className="absolute inset-0 rounded-full border-[3px] border-warriors-gold group-hover:border-warriors-yellow transition-colors" />
-                <img
-                  src={student.image}
-                  alt={student.name}
-                  className="w-full h-full rounded-full object-cover p-1"
-                />
-                {/* Rank badge */}
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-warriors-maroon text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap">
-                  {student.rank}
+              {/* Top header */}
+              <div className="absolute top-0 inset-x-0 px-2 pt-2 text-center text-white z-10">
+                <div className="text-[8px] font-semibold tracking-wide opacity-90">★ WARRIORS DEFENCE ACADEMY ★</div>
+                <div className="text-[11px] md:text-xs font-extrabold leading-tight mt-1">6 WARRIORS IN TOP 10</div>
+                <div className="inline-block bg-warriors-maroon text-white text-[8px] font-bold px-2 py-0.5 rounded mt-1">
+                  NDA 156 MERIT DOMINANCE
                 </div>
               </div>
-              <h3 className="font-semibold text-white text-sm">{student.name}</h3>
-              <p className="text-warriors-gold text-xs">{student.exam}</p>
+
+              {/* Hearty Congratulations vertical text */}
+              <div className="absolute left-2 top-1/2 -translate-y-1/2 -rotate-90 origin-center text-white/80 text-[9px] italic font-semibold whitespace-nowrap">
+                Hearty Congratulations
+              </div>
+
+              {/* Big AIR rank */}
+              <div className="absolute left-1/2 -translate-x-[70%] top-[45%] -translate-y-1/2 text-center pointer-events-none">
+                <div className="text-warriors-red text-xs font-extrabold leading-none">AIR</div>
+                <div className="text-warriors-gold text-5xl md:text-6xl font-black leading-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                  style={{ textShadow: "1px 1px 0 #b8860b, 2px 2px 0 #8b6508" }}>
+                  {s.rank}
+                </div>
+              </div>
+
+              {/* Student image */}
+              <img
+                src={s.image}
+                alt={s.name}
+                className="absolute right-0 bottom-8 h-[70%] w-1/2 object-cover object-top"
+              />
+
+              {/* Name plate */}
+              <div className="absolute bottom-2 right-2 bg-warriors-maroon text-white text-center px-2 py-1 rounded shadow-md max-w-[55%]">
+                <div className="text-[9px] font-extrabold leading-tight">{s.name}</div>
+                <div className="text-[7px] font-semibold opacity-90">UPSC Roll No - {s.roll}</div>
+              </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-10">
-          <Button
-            asChild
-            size="lg"
-            className="bg-warriors-gold text-warriors-green hover:bg-warriors-yellow font-bold"
-          >
-            <Link to="/gallery">
-              View All Selections
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+          <Button asChild size="lg" className="bg-warriors-green hover:bg-warriors-dark-green text-white rounded-full">
+            <Link to="/gallery">View All Selections</Link>
           </Button>
         </div>
       </div>
